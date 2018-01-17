@@ -14,6 +14,8 @@ func main() {
 	logger.Level = logrus.InfoLevel
 	logger.Formatter = &logrus.JSONFormatter{}
 
+	// Note: you can also use something like Logger: logger.WithFields(logrus.Fields{"a": "b"}) below.
+	// This way you can add your own fields to every middleware log entry.
 	l := logrusmiddleware.Middleware{
 		Name:   "example",
 		Logger: logger,
